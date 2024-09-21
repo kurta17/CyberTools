@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Network Scanner - CyberTools{% endblock %}
+
+{% block content %}
+<section id="network-scanner" class="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto mt-32">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Network Scanner</h2>
+    <form method="POST" class="bg-gray-100 p-6 rounded-lg shadow-md">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label for="ip_range" class="block text-gray-700 font-semibold mb-2">Enter IP Range (e.g., 192.168.1):</label>
+            <input type="text" name="ip_range" id="ip_range" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white p-2 w-full rounded-lg hover:bg-blue-600 transition duration-300">Scan Network</button>
+    </form>
+
+    {% if result %}
+    <p class="mt-4 text-center text-gray-700 font-semibold">{{ result }}</p>
+    {% endif %}
+</section>
+
+{% endblock %}

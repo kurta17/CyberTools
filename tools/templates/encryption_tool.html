@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+    <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Enter Message:</label>
+            <input type="text" name="message" id="message" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2" required>
+        </div>
+
+        <div class="flex space-x-4">
+            <button type="submit" name="action" value="encrypt" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Encrypt</button>
+            <button type="submit" name="action" value="decrypt" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Decrypt</button>
+        </div>
+    </form>
+
+    {% if encrypted_message %}
+        <div class="mt-4 p-4 bg-gray-100 rounded-lg overflow-auto">
+            <p class="text-sm font-medium text-gray-700">Encrypted Message:</p>
+            <p class="mt-1 text-gray-900 break-words">{{ encrypted_message }}</p>
+        </div>
+    {% endif %}
+
+    {% if decrypted_message %}
+        <div class="mt-4 p-4 bg-gray-100 rounded-lg overflow-auto">
+            <p class="text-sm font-medium text-gray-700">Decrypted Message:</p>
+            <p class="mt-1 text-gray-900 break-words">{{ decrypted_message }}</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

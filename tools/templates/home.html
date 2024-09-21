@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - CyberTools{% endblock %}
+
+{% block content %}
+<section id="get-started" class="mb-12 bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-semibold mb-6">Get Started</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/password-checker" class="block bg-gray-200 p-4 rounded-lg text-center hover:bg-gray-300">
+            <p class="text-lg font-semibold">Password Strength Checker</p>
+        </a>
+        <a href="/network-scanner" class="block bg-gray-200 p-4 rounded-lg text-center hover:bg-gray-300">
+            <p class="text-lg font-semibold">Network Scanner</p>
+        </a>
+        <a href="/encryption-tool" class="block bg-gray-200 p-4 rounded-lg text-center hover:bg-gray-300">
+            <p class="text-lg font-semibold">Encryption/Decryption Tool</p>
+        </a>
+        <a href="/blog" class="block bg-gray-200 p-4 rounded-lg text-center hover:bg-gray-300">
+            <p class="text-lg font-semibold">Cybersecurity Blog</p>
+        </a>
+    </div>
+</section>
+
+<section id="features" class="mb-12">
+    <h2 class="text-3xl font-semibold mb-6">Features</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-4">
+        <li><strong>Password Strength Checker</strong>: Evaluate the strength of user passwords and provide feedback to improve security.</li>
+        <li><strong>Network Scanner</strong>: Identify active devices on a given network range through automated ping scans.</li>
+        <li><strong>Encryption/Decryption Tool</strong>: Encrypt and decrypt messages using symmetric encryption algorithms (AES).</li>
+        <li><strong>Cybersecurity Blog</strong>: Share insights, best practices, and write-ups on security tools and projects.</li>
+    </ul>
+</section>
+
+<section id="about" class="mb-12">
+    <h2 class="text-3xl font-semibold mb-6">About CyberTools</h2>
+    <p class="text-gray-700 leading-relaxed">
+        CyberTools is a web platform built using Django, PostgreSQL, and Tailwind CSS, designed to showcase practical cybersecurity skills through interactive tools. This project serves as a portfolio for aspiring cybersecurity professionals, demonstrating a wide range of security techniques and solutions.
+    </p>
+</section>
+{% endblock %}
