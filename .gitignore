@@ -13,7 +13,7 @@ __pycache__/
 .idea/
 
 # Ignore database files
-*.sqlite3
+*.postgres
 
 # Ignore system files
 .DS_Store

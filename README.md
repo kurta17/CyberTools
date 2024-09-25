@@ -28,6 +28,7 @@ This project highlights key areas of cybersecurity such as password security, ne
 
     Update your database settings in settings.py.
     Run migrations:
+    ```bash
         python manage.py migrate
 
 4. Run the development server:
